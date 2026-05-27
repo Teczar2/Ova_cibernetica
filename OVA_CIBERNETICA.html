@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OVA — Teoría de la Organización y Cibernética</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=IBM+Plex+Mono:wght@300;400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">OVA · TGS #16</div>
+  <ul class="nav-links">
+    <li><a href="#contexto">Contexto</a></li>
+    <li><a href="#teoria">Teoría</a></li>
+    <li><a href="#ejemplos">Ejemplos</a></li>
+    <li><a href="#ejercicios">Ejercicios</a></li>
+    <li><a href="#juegos">Juegos</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#quiz">Quiz</a></li>
+    <li><a href="#creditos">Créditos</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<div id="hero">
+  <svg class="hero-circuit" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="90" stroke="#00e5ff" stroke-width="0.5" stroke-dasharray="8 4"/>
+    <circle cx="100" cy="100" r="65" stroke="#a259ff" stroke-width="0.5" stroke-dasharray="4 8"/>
+    <circle cx="100" cy="100" r="40" stroke="#00e5ff" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="8" fill="#00e5ff" opacity="0.6"/>
+    <line x1="100" y1="10" x2="100" y2="92" stroke="#00e5ff" stroke-width="0.5"/>
+    <line x1="100" y1="108" x2="100" y2="190" stroke="#00e5ff" stroke-width="0.5"/>
+    <line x1="10" y1="100" x2="92" y2="100" stroke="#00e5ff" stroke-width="0.5"/>
+    <line x1="108" y1="100" x2="190" y2="100" stroke="#00e5ff" stroke-width="0.5"/>
+    <line x1="36" y1="36" x2="71" y2="71" stroke="#a259ff" stroke-width="0.5"/>
+    <line x1="164" y1="36" x2="129" y2="71" stroke="#a259ff" stroke-width="0.5"/>
+    <line x1="36" y1="164" x2="71" y2="129" stroke="#a259ff" stroke-width="0.5"/>
+    <line x1="164" y1="164" x2="129" y2="129" stroke="#a259ff" stroke-width="0.5"/>
+  </svg>
+
+  <div class="hero-inner">
+    <p class="hero-tag">// Teoría General de Sistemas · Tema 16</p>
+    <h1 class="hero-title">
+      Teoría de la<br>
+      <span>Organización</span><br>
+      y Cibernética
+    </h1>
+    <p class="hero-sub">
+      Explora cómo los sistemas se autorregulan, comunican y aprenden. 
+      Desde los fundamentos de Wiener hasta las organizaciones inteligentes modernas.
+    </p>
+    <div class="hero-pills">
+      <span class="pill active">Cibernética</span>
+      <span class="pill">Retroalimentación</span>
+      <span class="pill">Homeostasis</span>
+      <span class="pill">Autoorganización</span>
+      <span class="pill">Control de sistemas</span>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span class="scroll-arrow">↓</span>
+    <span>Explorar</span>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ── CONTEXTUALIZACIÓN ── -->
+<section id="contexto">
+  <div class="sec-header">
+    <div class="sec-num">// 01 · Contextualización</div>
+    <h2 class="sec-title">¿Por qué estudiar esto?</h2>
+    <p class="sec-desc">
+      La Teoría de la Organización y la Cibernética son pilares fundamentales para entender 
+      cómo cualquier sistema — biológico, tecnológico o social — se organiza, se comunica y se adapta.
+    </p>
+  </div>
+
+  <div class="highlight">
+    <p class="highlight-big">
+      "La cibernética es la ciencia del <em>control</em> y la <em>comunicación</em><br>
+      en el animal y en la máquina."
+    </p>
+    <p style="margin-top:0.75rem;font-size:0.8rem;color:var(--text-muted);font-family:'IBM Plex Mono',monospace">
+      — Norbert Wiener, 1948
+    </p>
+  </div>
+
+  <div class="grid-3" style="margin-top:2rem">
+    <div class="card">
+      <div class="card-icon">🤖</div>
+      <div class="card-title">Tecnología</div>
+      <div class="card-text">Los sistemas de control automático, la IA y la robótica nacen de los principios cibernéticos. Todo sistema inteligente usa retroalimentación.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏢</div>
+      <div class="card-title">Organizaciones</div>
+      <div class="card-text">Las empresas son sistemas organizacionales complejos. Comprender su estructura permite diseñar organizaciones más eficientes y adaptables.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌱</div>
+      <div class="card-title">Biología</div>
+      <div class="card-text">El cuerpo humano regula temperatura, glucosa y presión con mecanismos de retroalimentación idénticos a los de los sistemas de control.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:1.5rem; border-color:rgba(255,107,53,0.3);">
+    <div class="card-title" style="color:var(--accent2)">📌 Importancia en Ingeniería de Sistemas</div>
+    <div class="card-text">
+      Para un ingeniero de sistemas, la cibernética es el lenguaje común entre hardware, software y procesos humanos. 
+      Conceptos como <strong>retroalimentación negativa</strong>, <strong>bucles de control</strong> y 
+      <strong>entropía organizacional</strong> son esenciales para diseñar sistemas robustos, ya sea una arquitectura 
+      de software, un pipeline de CI/CD o una red de sensores IoT.
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ── TEORÍA ── -->
+<section id="teoria">
+  <div class="sec-header">
+    <div class="sec-num">// 02 · Marco Teórico</div>
+    <h2 class="sec-title">Fundamentos Conceptuales</h2>
+    <p class="sec-desc">Exploramos los conceptos clave que componen la Teoría de la Organización y la Cibernética.</p>
+  </div>
+
+  <h3 style="font-family:'Orbitron',monospace;font-size:1rem;color:var(--accent);margin-bottom:1.25rem">
+    2.1 · La Cibernética
+  </h3>
+
+  <div class="concept-box">
+    <div class="label">Definición</div>
+    <p>La <strong>cibernética</strong> es la ciencia interdisciplinaria que estudia los mecanismos de <em>regulación, control y comunicación</em> en sistemas complejos, ya sean biológicos, mecánicos o sociales. Fue fundada por Norbert Wiener en 1948.</p>
+  </div>
+
+  <div class="grid-2" style="margin:1.5rem 0">
+    <div class="card">
+      <div class="card-title">🔄 Retroalimentación (Feedback)</div>
+      <div class="card-text">
+        Es el mecanismo central de la cibernética. El sistema usa información sobre su propia salida para corregir su comportamiento.
+        <br><br>
+        <span class="tag tag-cyan">Negativa</span> Busca estabilidad y corrección de errores.<br>
+        <span class="tag tag-orange">Positiva</span> Amplifica cambios, puede generar inestabilidad.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">⚡ Homeostasis</div>
+      <div class="card-text">
+        Capacidad de un sistema para mantener su estado interno estable frente a perturbaciones externas. 
+        El termostato de un hogar y la regulación de temperatura corporal son ejemplos clásicos.
+        <br><br>
+        <span class="tag tag-purple">Concepto clave</span> Todo sistema viable busca el equilibrio dinámico.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">📡 Comunicación y Control</div>
+      <div class="card-text">
+        Wiener demostró que todo sistema de control requiere canales de comunicación eficientes. 
+        Sin información, no hay control. Sin control, el sistema tiende al desorden (entropía).
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">🌀 Entropía y Negentropía</div>
+      <div class="card-text">
+        La entropía es la tendencia natural al desorden. Los sistemas organizados usan <strong>negentropía</strong> 
+        (información, energía, orden) para sobrevivir. Las organizaciones son máquinas anti-entropía.
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Orbitron',monospace;font-size:1rem;color:var(--accent);margin:2rem 0 1.25rem">
+    2.2 · Teoría de la Organización
+  </h3>
+
+  <div class="concept-box">
+    <div class="label">Definición</div>
+    <p>Estudia cómo los sistemas (empresas, instituciones, comunidades) se estructuran internamente, cómo coordinan sus partes y cómo se adaptan a entornos cambiantes. Integra principios de administración, biología y cibernética.</p>
+  </div>
+
+  <div class="grid-3" style="margin-top:1.5rem">
+    <div class="card">
+      <div class="card-title">🏗️ Estructura</div>
+      <div class="card-text">Define las relaciones formales entre los componentes: jerarquías, divisiones, roles. Determina cómo fluye la información y la autoridad.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">🎯 Función</div>
+      <div class="card-text">Cada subsistema cumple una función específica que contribuye al objetivo del sistema total. La especialización permite eficiencia.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">🔗 Integración</div>
+      <div class="card-text">Los subsistemas deben coordinar sus acciones. La integración puede ser mediante reglas, cultura, tecnología o comunicación directa.</div>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Orbitron',monospace;font-size:1rem;color:var(--accent);margin:2.5rem 0 1.5rem">
+    2.3 · Historia y Autores Clave
+  </h3>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">// 1948</div>
+      <div class="tl-name">Norbert Wiener — Cibernética</div>
+      <div class="tl-text">Publica "Cibernética: o el control y la comunicación en animales y máquinas". Establece los principios de retroalimentación y control automático. Considerado el padre de la cibernética.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">// 1956</div>
+      <div class="tl-name">W. Ross Ashby — Ley de Variedad Requerida</div>
+      <div class="tl-text">Formula la Ley de Ashby: "Solo la variedad puede destruir variedad." Un sistema de control debe tener al menos tanta variedad como el sistema que controla.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">// 1960s</div>
+      <div class="tl-name">Stafford Beer — Cibernética de Gestión</div>
+      <div class="tl-text">Aplica la cibernética a la gestión empresarial. Desarrolla el Modelo de Sistema Viable (VSM), que describe cómo deben estructurarse las organizaciones para sobrevivir.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">// 1972</div>
+      <div class="tl-name">Maturana y Varela — Autopoiesis</div>
+      <div class="tl-text">Introducen el concepto de autopoiesis: la capacidad de un sistema de producirse y reproducirse a sí mismo. Aplicado posteriormente a organizaciones sociales.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">// 1990</div>
+      <div class="tl-name">Peter Senge — La Quinta Disciplina</div>
+      <div class="tl-text">Integra cibernética y teoría organizacional en el concepto de "organizaciones que aprenden". Los bucles de retroalimentación son centrales en el pensamiento sistémico.</div>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Orbitron',monospace;font-size:1rem;color:var(--accent);margin:2.5rem 0 1.25rem">
+    2.4 · Modelo de Sistema Viable (VSM)
+  </h3>
+
+  <div class="card">
+    <div class="card-text">El VSM de Stafford Beer describe 5 subsistemas necesarios para que una organización sea viable:</div>
+    <div style="margin-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem">
+      <div style="display:flex;align-items:flex-start;gap:1rem">
+        <span style="font-family:'Orbitron',monospace;font-size:0.75rem;color:var(--accent);min-width:50px">S1</span>
+        <div><strong style="color:#fff">Operaciones</strong> — Las unidades que producen los bienes/servicios del sistema.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:1rem">
+        <span style="font-family:'Orbitron',monospace;font-size:0.75rem;color:var(--accent2);min-width:50px">S2</span>
+        <div><strong style="color:#fff">Coordinación</strong> — Previene conflictos entre unidades operativas.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:1rem">
+        <span style="font-family:'Orbitron',monospace;font-size:0.75rem;color:var(--accent3);min-width:50px">S3</span>
+        <div><strong style="color:#fff">Control</strong> — Optimiza el rendimiento presente del sistema.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:1rem">
+        <span style="font-family:'Orbitron',monospace;font-size:0.75rem;color:var(--accent);min-width:50px">S4</span>
+        <div><strong style="color:#fff">Inteligencia</strong> — Monitorea el entorno externo y planifica el futuro.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:1rem">
+        <span style="font-family:'Orbitron',monospace;font-size:0.75rem;color:var(--accent2);min-width:50px">S5</span>
+        <div><strong style="color:#fff">Política</strong> — Define la identidad, valores y propósito del sistema.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ── EJEMPLOS PRÁCTICOS ── -->
+<section id="ejemplos">
+  <div class="sec-header">
+    <div class="sec-num">// 03 · Ejemplos Prácticos</div>
+    <h2 class="sec-title">Casos Reales</h2>
+    <p class="sec-desc">La cibernética y la teoría organizacional están presentes en sistemas que usas todos los días.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-icon">🌡️</div>
+      <div class="card-title">Termostato Inteligente (Nest)</div>
+      <div class="card-text">
+        Ejemplo perfecto de retroalimentación negativa. El sensor mide la temperatura actual (salida del sistema), 
+        la compara con la temperatura deseada (setpoint) y activa/desactiva la calefacción (actuador). 
+        El loop se repite constantemente manteniendo la homeostasis del hogar.
+      </div>
+      <div style="margin-top:1rem">
+        <span class="tag tag-cyan">Retroalimentación negativa</span>
+        <span class="tag tag-orange">Homeostasis</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚗</div>
+      <div class="card-title">Piloto Automático (Tesla Autopilot)</div>
+      <div class="card-text">
+        El sistema recibe datos continuos de cámaras, radar y lidar (sensores), los procesa con redes neuronales 
+        y ajusta dirección, aceleración y frenos (actuadores). Es un sistema cibernético en tiempo real 
+        con múltiples bucles de control simultáneos.
+      </div>
+      <div style="margin-top:1rem">
+        <span class="tag tag-purple">Control cibernético</span>
+        <span class="tag tag-cyan">Tiempo real</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <div class="card-title">Spotify — Organización Ágil</div>
+      <div class="card-text">
+        Spotify diseñó su estructura organizacional aplicando principios sistémicos: <strong>Squads</strong> (unidades autónomas), 
+        <strong>Tribes</strong> (agrupaciones), <strong>Chapters</strong> (funciones transversales) y <strong>Guilds</strong> (comunidades de práctica). 
+        Cada nivel tiene retroalimentación propia y autonomía, como un VSM aplicado a software.
+      </div>
+      <div style="margin-top:1rem">
+        <span class="tag tag-orange">Modelo VSM</span>
+        <span class="tag tag-purple">Autoorganización</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏥</div>
+      <div class="card-title">Sistema Inmunológico Humano</div>
+      <div class="card-text">
+        El sistema inmune es el ejemplo biológico por excelencia de cibernética. Detecta patógenos (sensores), 
+        genera respuesta inmune (actuadores) y recuerda amenazas (aprendizaje). La fiebre es una retroalimentación 
+        positiva temporal que crea un entorno hostil para los patógenos.
+      </div>
+      <div style="margin-top:1rem">
+        <span class="tag tag-cyan">Biocibernética</span>
+        <span class="tag tag-orange">Retroalimentación</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-top:2rem">
+    <p class="highlight-big">
+      En cada uno de estos casos el patrón es el mismo:<br>
+      <em>Sensor → Comparador → Actuador → Retroalimentación</em>
+    </p>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ── EJERCICIOS ── -->
+<section id="ejercicios">
+  <div class="sec-header">
+    <div class="sec-num">// 04 · Ejercicios</div>
+    <h2 class="sec-title">Practica y Reflexiona</h2>
+    <p class="sec-desc">Pon a prueba tu comprensión. Selecciona una opción y recibe retroalimentación inmediata.</p>
+  </div>
+
+  <div class="ejercicio-box">
+    <div class="ej-question">
+      🧩 <strong>Ejercicio 1.</strong> Un sistema de control de inventario detecta que el stock baja del mínimo 
+      y automáticamente emite una orden de compra. ¿Qué tipo de retroalimentación utiliza?
+    </div>
+    <div class="ej-options">
+      <button class="ej-option" onclick="checkEj(this,'A','1')">A) Retroalimentación positiva — amplifica la señal de escasez.</button>
+      <button class="ej-option" onclick="checkEj(this,'B','1')">B) Retroalimentación negativa — corrige la desviación del estado deseado.</button>
+      <button class="ej-option" onclick="checkEj(this,'C','1')">C) Ninguna de las anteriores — el sistema no usa retroalimentación.</button>
+      <button class="ej-option" onclick="checkEj(this,'D','1')">D) Retroalimentación nula — la orden es un proceso abierto.</button>
+    </div>
+    <div id="fb-1" class="ej-feedback">
+      ✅ <strong>Correcto.</strong> Es retroalimentación <em>negativa</em> porque el sistema compara el stock actual 
+      con el mínimo deseado (setpoint) y actúa para corregir la diferencia, buscando restablecer el equilibrio.
+      El objetivo es llevar el sistema de vuelta a su estado normal, no amplificar el cambio.
+    </div>
+  </div>
+
+  <div class="ejercicio-box">
+    <div class="ej-question">
+      🧩 <strong>Ejercicio 2.</strong> Stafford Beer aplicó la cibernética para diseñar organizaciones. 
+      En su Modelo de Sistema Viable, ¿qué subsistema se encarga de monitorear el entorno externo y planificar el futuro?
+    </div>
+    <div class="ej-options">
+      <button class="ej-option" onclick="checkEj(this,'A','2')">A) Sistema 1 — Operaciones</button>
+      <button class="ej-option" onclick="checkEj(this,'B','2')">B) Sistema 2 — Coordinación</button>
+      <button class="ej-option" onclick="checkEj(this,'C','2')">C) Sistema 3 — Control</button>
+      <button class="ej-option" onclick="checkEj(this,'D','2')">D) Sistema 4 — Inteligencia</button>
+    </div>
+    <div id="fb-2" class="ej-feedback">
+      ✅ <strong>Correcto.</strong> El <strong>Sistema 4 (Inteligencia)</strong> es el encargado de mirar hacia afuera 
+      y hacia el futuro. Analiza el entorno, las amenazas y oportunidades, y provee información estratégica 
+      al Sistema 5 (Política) para la toma de decisiones de largo plazo.
+    </div>
+  </div>
+
+  <div class="ejercicio-box">
+    <div class="ej-question">
+      🧩 <strong>Ejercicio 3.</strong> ¿Cuál es la "Ley de Variedad Requerida" de W. Ross Ashby?
+    </div>
+    <div class="ej-options">
+      <button class="ej-option" onclick="checkEj(this,'A','3')">A) Un sistema solo puede sobrevivir si su entorno es estable.</button>
+      <button class="ej-option" onclick="checkEj(this,'B','3')">B) Solo la variedad puede destruir variedad: el controlador debe tener al menos tanta complejidad como el sistema controlado.</button>
+      <button class="ej-option" onclick="checkEj(this,'C','3')">C) Los sistemas tienden siempre al aumento de entropía sin importar el control.</button>
+      <button class="ej-option" onclick="checkEj(this,'D','3')">D) La variedad en un sistema siempre reduce su eficiencia.</button>
+    </div>
+    <div id="fb-3" class="ej-feedback">
+      ✅ <strong>Correcto.</strong> La <strong>Ley de Ashby</strong> es fundamental en cibernética: para controlar un sistema complejo, 
+      el controlador necesita tener al menos la misma variedad (complejidad) que el sistema controlado. 
+      Ejemplo: un ciberatacante con 100 vectores de ataque no puede ser contenido por un sistema de defensa 
+      con solo 10 respuestas posibles.
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ── JUEGOS ── -->
+<section id="juegos">
+  <div class="sec-header">
+    <div class="sec-num">// 05 · Juegos Interactivos</div>
+    <h2 class="sec-title">Aprende Jugando</h2>
+    <p class="sec-desc">Dos juegos para consolidar tu conocimiento de manera divertida.</p>
+  </div>
+
+  <!-- JUEGO 1: EMPAREJAMIENTO -->
+  <div class="game-container">
+    <div class="game-title">🎮 Juego 1 — Conecta el Concepto</div>
+    <div class="game-desc">
+      Selecciona un concepto de la columna izquierda y luego su definición en la derecha. ¡Emparejalos todos!
+    </div>
+    <div id="match-board">
+      <div class="match-col" id="match-left"></div>
+      <div class="match-col" id="match-right"></div>
+    </div>
+    <div class="game-score">Pares: <span id="match-count">0</span> / 6</div>
+    <div class="game-msg" id="match-msg">Selecciona un concepto para comenzar</div>
+    <div style="margin-top:1rem;text-align:center">
+      <button class="btn" onclick="resetMatch()">↩ Reiniciar</button>
+    </div>
+  </div>
+
+  <!-- JUEGO 2: CLASIFICADOR -->
+  <div class="game-container">
+    <div class="game-title">🎮 Juego 2 — Clasifica el Sistema</div>
+    <div class="game-desc">
+      Arrastra cada ejemplo a la categoría correcta: ¿es retroalimentación <strong>Positiva</strong> o <strong>Negativa</strong>?
+    </div>
+    <div id="classify-board">
+      <div id="words-bank" style="border:2px dashed var(--border);border-radius:10px;padding:0.75rem;min-height:60px">
+        <div class="classify-zone-label">Ejemplos a clasificar</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div>
+          <div class="classify-zone-label">🔴 Retroalimentación Positiva</div>
+          <div class="classify-zone" id="zone-positiva" ondragover="dragOver(event)" ondrop="drop(event,'positiva')"></div>
+        </div>
+        <div>
+          <div class="classify-zone-label">🔵 Retroalimentación Negativa</div>
+          <div class="classify-zone" id="zone-negativa" ondragover="dragOver(event)" ondrop="drop(event,'negativa')"></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:1rem;display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center">
+      <button class="btn primary" onclick="checkClassify()">✓ Verificar</button>
+      <button class="btn" onclick="resetClassify()">↩ Reiniciar</button>
+      <span id="classify-msg" class="game-msg" style="margin:0"></span>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ── VIDEOS ── -->
+<section id="videos">
+  <div class="sec-header">
+    <div class="sec-num">// 06 · Videos</div>
+    <h2 class="sec-title">Recursos Audiovisuales</h2>
+    <p class="sec-desc">Videos curados para complementar y profundizar los conceptos del tema.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="video-card">
+      <a class="video-thumb" href="https://www.youtube.com/watch?v=Aahj4FMHsew" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/Aahj4FMHsew/hqdefault.jpg" alt="Cibernética explicada" loading="lazy">
+        <div class="video-play-btn">▶</div>
+      </a>
+      <div class="video-info">
+        <h4>¿Qué es la Cibernética?</h4>
+        <p>Introducción clara al concepto de cibernética, retroalimentación y control de sistemas. Ideal como punto de partida.</p>
+      </div>
+    </div>
+    <div class="video-card">
+      <a class="video-thumb" href="https://www.youtube.com/watch?v=_a77lL2ri4Y" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/_a77lL2ri4Y/hqdefault.jpg" alt="Pensamiento sistémico" loading="lazy">
+        <div class="video-play-btn">▶</div>
+      </a>
+      <div class="video-info">
+        <h4>Pensamiento Sistémico y Retroalimentación</h4>
+        <p>Cómo los bucles de retroalimentación crean el comportamiento de los sistemas. Basado en los principios de Peter Senge.</p>
+      </div>
+    </div>
+    <div class="video-card">
+      <a class="video-thumb" href="https://www.youtube.com/watch?v=EKWGGDXe5MA" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/EKWGGDXe5MA/hqdefault.jpg" alt="Teoría organizacional" loading="lazy">
+        <div class="video-play-btn">▶</div>
+      </a>
+      <div class="video-info">
+        <h4>Teoría de la Organización</h4>
+        <p>Evolución histórica de las teorías organizacionales: desde Taylor hasta los sistemas adaptativos complejos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ── QUIZ ── -->
+<section id="quiz">
+  <div class="sec-header">
+    <div class="sec-num">// 07 · Evaluación</div>
+    <h2 class="sec-title">Quiz Interactivo</h2>
+    <p class="sec-desc">10 preguntas para evaluar tu comprensión. Recibirás una calificación automática al final.</p>
+  </div>
+
+  <div id="quiz-container">
+    <div class="quiz-progress-bar">
+      <div class="quiz-progress-fill" id="quiz-bar" style="width:0%"></div>
+    </div>
+
+    <div id="quiz-active">
+      <div class="quiz-q-num" id="quiz-num">Pregunta 1 de 10</div>
+      <div class="quiz-question" id="quiz-q"></div>
+      <div class="quiz-options" id="quiz-opts"></div>
+      <div class="quiz-nav">
+        <button class="btn primary" id="quiz-next-btn" onclick="quizNext()" style="display:none">Siguiente →</button>
+      </div>
+    </div>
+
+    <div id="quiz-result">
+      <div class="result-score" id="result-pct"></div>
+      <div class="result-label" id="result-label"></div>
+      <div class="result-stars" id="result-stars"></div>
+      <div style="margin-top:0.5rem;font-size:0.82rem;color:var(--text-muted)" id="result-detail"></div>
+      <div style="margin-top:1.5rem">
+        <button class="btn primary" onclick="resetQuiz()">↩ Intentar de nuevo</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ── CRÉDITOS ── -->
+<div id="creditos">
+  <div class="credits-inner">
+    <div class="credits-header">
+      <div class="sec-num">// 08 · Créditos</div>
+      <h2 class="sec-title">Autoría y Referencias</h2>
+    </div>
+
+    <div class="credits-author">
+      <div class="author-name">Alejandro Osorio Villamizar</div>
+      <div class="author-detail">
+        Proyecto N° 16 — Teoría de la Organización y Cibernética<br>
+        Teoría General de Sistemas (TGS)<br>
+        Ingeniería de Sistemas — Semestre 5<br>
+        Universidad Simón Bolívar — Sede Cúcuta<br>
+        2025
+      </div>
+    </div>
+
+    <h3 style="font-family:'Orbitron',monospace;font-size:0.85rem;color:var(--accent);margin:2rem 0 1rem;letter-spacing:1px">
+      REFERENCIAS BIBLIOGRÁFICAS
+    </h3>
+    <ul class="refs-list">
+      <li><strong>Wiener, N. (1948).</strong> Cybernetics: Or Control and Communication in the Animal and the Machine. MIT Press.</li>
+      <li><strong>Ashby, W. R. (1956).</strong> An Introduction to Cybernetics. Chapman & Hall, London.</li>
+      <li><strong>Beer, S. (1972).</strong> Brain of the Firm. Herder and Herder, New York.</li>
+      <li><strong>Maturana, H. & Varela, F. (1972).</strong> Autopoiesis and Cognition. D. Reidel Publishing Company.</li>
+      <li><strong>Senge, P. (1990).</strong> The Fifth Discipline: The Art and Practice of the Learning Organization. Doubleday.</li>
+      <li><strong>Von Bertalanffy, L. (1968).</strong> General System Theory. George Braziller, New York.</li>
+      <li><strong>Checkland, P. (1981).</strong> Systems Thinking, Systems Practice. John Wiley & Sons.</li>
+      <li><strong>Luhmann, N. (1984).</strong> Soziale Systeme. Suhrkamp Verlag. (Trad. Social Systems, 1995.)</li>
+    </ul>
+
+    <div style="text-align:center;margin-top:3rem">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-muted);letter-spacing:2px">
+        CONSTRUIDO CON HTML · CSS · JAVASCRIPT<br>
+        UNIVERSIDAD SIMÓN BOLÍVAR — CÚCUTA, COLOMBIA
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ ÚNICA etiqueta script — carga el archivo externo -->
+<script src="app.js"></script>
+</body>
+</html>
