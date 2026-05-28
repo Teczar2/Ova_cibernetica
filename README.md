@@ -48,6 +48,9 @@ Abre OVA_CIBERNETICA.html en cualquier navegador moderno.
 Los tres archivos deben estar en la misma carpeta.
 
 
+También disponible en línea: Ver OVA publicada → https://teczar2.github.io/Ova_cibernetica/
+
+
 📚 Referencias Bibliográficas
 
 Wiener, N. (1948). Cybernetics: Or Control and Communication in the Animal and the Machine. MIT Press.
