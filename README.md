@@ -34,7 +34,8 @@ Claude AI — Apoyo en generación y depuración de código
 
 
 📁 Estructura del Proyecto
-OVA-Cibernetica/
+OVA-Cibernetica
+/
 ├── OVA_CIBERNETICA.html   # Página principal
 ├── style.css              # Estilos
 ├── app.js                 # Lógica interactiva
